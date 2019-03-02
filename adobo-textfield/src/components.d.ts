@@ -12,58 +12,67 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface AdoboTextfield {
+    'dense': boolean;
+    'disabled': boolean;
+    'focused': boolean;
+    'fullwidth': boolean;
+    'helpertext': string;
+    'icon': string;
+    'iconposition': string;
+    'label': string;
+    'labelposition': string;
+    'minlength': number;
+    'outlined': boolean;
+    'required': boolean;
+    'showbox': boolean;
+    'textarea': boolean;
+    'type': string;
+    'value': string;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+  interface AdoboTextfieldAttributes extends StencilHTMLAttributes {
+    'dense'?: boolean;
+    'disabled'?: boolean;
+    'focused'?: boolean;
+    'fullwidth'?: boolean;
+    'helpertext'?: string;
+    'icon'?: string;
+    'iconposition'?: string;
+    'label'?: string;
+    'labelposition'?: string;
+    'minlength'?: number;
+    'onSelected'?: (event: CustomEvent) => void;
+    'outlined'?: boolean;
+    'required'?: boolean;
+    'showbox'?: boolean;
+    'textarea'?: boolean;
+    'type'?: string;
+    'value'?: string;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'AdoboTextfield': Components.AdoboTextfield;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'adobo-textfield': Components.AdoboTextfieldAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLAdoboTextfieldElement extends Components.AdoboTextfield, HTMLStencilElement {}
+  var HTMLAdoboTextfieldElement: {
+    prototype: HTMLAdoboTextfieldElement;
+    new (): HTMLAdoboTextfieldElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'adobo-textfield': HTMLAdoboTextfieldElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'adobo-textfield': HTMLAdoboTextfieldElement;
   }
 
 
