@@ -1,0 +1,15 @@
+{
+  "namespace": "AdoboGrid",
+  "fsNamespace": "adobo-grid",
+  "loader": "../adobo-grid.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "core": "adobo-grid.core.js",
+  "components": {
+    "adobo-grid": {
+      "bundleIds": {
+        "$": "adobo-grid"
+      },
+      "encapsulation": "shadow"
+    }
+  }
+}
