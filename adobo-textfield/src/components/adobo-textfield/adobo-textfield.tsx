@@ -1,5 +1,5 @@
 import { Component, Prop, Element,  Event, EventEmitter } from '@stencil/core';
-import MDCTextField from '@material/textfield';
+import { MDCTextField } from '@material/textfield/index';
 
 @Component({
   tag: 'adobo-textfield',
@@ -38,7 +38,7 @@ export class AdoboTextfield {
   }
 
   componentDidLoad(){
-    this.mdcTextfieldComponent = MDCTextField.attachTo(this.mdcTextfield)
+    this.mdcTextfieldComponent = new MDCTextField(this.mdcTextfield);
   }
   renderLabel(){
     if(this.label){
@@ -146,10 +146,10 @@ export class AdoboTextfield {
              ref={(mdcTextfield) => { this.mdcTextfield = mdcTextfield; }}>
           {this.renderIcon()}
           {this.renderInputOrTextarea()}
-          <label class="mdc-text-field__label mdc-text-field__label--float-above" htmlfor="pre-filled">
+          <label class="mdc-floating-label" htmlfor="pre-filled">
             {this.label}
           </label>
-          <div class="mdc-text-field__bottom-line"></div>
+          <div class="mdc-line-ripple" />
         </div>
         {this.renderHelperText()}
       </div>
